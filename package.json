@@ -1,15 +1,16 @@
 {
   "name": "parse-template",
   "version": "0.2.1",
-  "description": "",
+  "description": "A simple and light-weight template parser",
   "main": "build/index.js",
   "types": "build/index.d.ts",
+  "repository": "https://github.com/willtpwise/parseTemplate",
   "scripts": {
     "test": "jest",
     "build": "rm -rf build && tsc"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["template", "dynamic", "handlebars", "replace"],
+  "author": "William Wise",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.10.5",
