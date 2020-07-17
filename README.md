@@ -3,18 +3,25 @@
 > A very light weight library which allows you to process tokenised strings
 
 Say you have a string like this:
-```
+```javascript
 const input = 'Hello ${firstName}'
 ```
 
 You can parse it like this:
 ```javascript
+import { parseTemplate } from 'parse-template'
+
 const meta = { firstName: 'Jess' }
 
 parseTemplate(input, meta) // 'Hello Jess'
 ```
 
-## Documentation
+### Installing
+```
+npm i --save parse-template
+```
+
+## Features
 
 ### Object syntax
 ```javascript
@@ -64,3 +71,12 @@ parseTemplate('Hello ${user}', meta) // 'Hello '
 ## Contributing
 
 Thanks for the help :) Please open a PR!
+
+### Local Development
+```
+npm i
+
+npm test
+
+npm run build
+```
