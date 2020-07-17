@@ -1,6 +1,6 @@
 {
   "name": "parse-template",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "A simple and light-weight template parser",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -9,7 +9,12 @@
     "test": "jest",
     "build": "rm -rf build && tsc"
   },
-  "keywords": ["template", "dynamic", "handlebars", "replace"],
+  "keywords": [
+    "template",
+    "dynamic",
+    "handlebars",
+    "replace"
+  ],
   "author": "William Wise",
   "license": "ISC",
   "devDependencies": {
