@@ -31,14 +31,14 @@ workflows:
     jobs:
       - build-and-test
   publish:
+    filters:
+      tags:
+        only: /^v.*/
+      branches:
+        ignore: /.*/
     jobs:
       - build-and-test
       - publish:
           context: personal
-          filters:
-            tags:
-              only: /^v.*/
-            branches:
-              ignore: /.*/
           requires:
             - build-and-test
