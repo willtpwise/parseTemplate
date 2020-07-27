@@ -15,25 +15,11 @@ jobs:
     <<: *defaults  
     steps:
       - checkout
-
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          - v1-dependencies-
-
-      - run: npm install
-      - run:
-          name: Run tests
-          command: npm test
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
-      - persist_to_workspace:
-          root: ~/repo
-          paths: .
+      - node/with-cache:
+        steps:
+          - run: npm install
+          - run: npm test
+          - run: npm run build
 
   publish:
     <<: *defaults
