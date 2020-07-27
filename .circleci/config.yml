@@ -1,17 +1,9 @@
-
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check {{ '/2.0/language-javascript/' | docs_url }} for more details
-#
-version: 2
-
-defaults: &defaults
-  working_directory: ~/repo
-  docker:
-    - image: circleci/node:8.9.1
+version: 2.1
+orbs:
+  node: circleci/node@1.1.6
 
 jobs:
-  test:
+  build-and-test:
     <<: *defaults  
     steps:
       - checkout
@@ -34,15 +26,10 @@ jobs:
           command: npm publish
 
 workflows:
-  version: 2
-  test-deploy:
+  build-and-test:
     jobs:
-      - test
-      - publish:
-          requires:
-            - test
-#           filters:
-#             tags:
-#               only: /^v.*/
-#             branches:
-#               ignore: /.*/
+      - build-and-test
+  publish:
+    jobs:
+      - build-and-test
+      - publish
