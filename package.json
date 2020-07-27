@@ -1,6 +1,6 @@
 {
   "name": "parse-template",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple and light-weight template parser",
   "main": "build/index.js",
   "types": "build/index.d.ts",
