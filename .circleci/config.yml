@@ -27,18 +27,15 @@ jobs:
           name: Publish package
           command: npm publish
 workflows:
-  build-and-test:
-    jobs:
-      - build-and-test
-  publish:
-    filters:
-      tags:
-        only: /^v.*/
-      branches:
-        ignore: /.*/
+  build-test-publish:
     jobs:
       - build-and-test
       - publish:
           context: personal
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
           requires:
             - build-and-test
