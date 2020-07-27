@@ -19,7 +19,7 @@ jobs:
       - checkout
       - run:
           name: Authenticate with registry
-          command: echo _auth=$NPM_TOKEN >> .npmrc && echo email=$NPM_EMAIL >> .npmrc && always-auth=true >> .npmrc
+          command: echo _auth=$NPM_TOKEN >> .npmrc && echo email=$NPM_EMAIL >> .npmrc && echo always-auth=true >> .npmrc
       - run:
           name: Publish package
           command: npm publish
@@ -29,5 +29,5 @@ workflows:
       - build-and-test
   publish:
     jobs:
-      - build-and-test
       - publish
+      - build-and-test
