@@ -70,7 +70,7 @@ parseTemplate('Hello ${user}', meta) // 'Hello '
 
 ## Contributing
 
-Thanks for the help :) Please open a PR!
+Thanks for the help :) Please fork this repo then submit a PR back into.
 
 ### Local Development
 ```
